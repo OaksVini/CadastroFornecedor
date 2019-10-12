@@ -1,0 +1,29 @@
+<h1 style="text-align: center;">
+  <h1>
+    Cadastro de Fornecedores
+  </h1>
+</h1>
+
+<form>
+
+  <label for="nomeFantasia">Nome Fantasia: </label>  <br />
+  <input type="text" name="nomeFantasia" [(ngModel)]="fornecedor.NomeFantasia"/>
+
+  <br />
+
+  <label for="razaoSocial">Razão Social: </label>  <br />
+  <input type="text" name="razaoSocial" [(ngModel)]="fornecedor.RazaoSocial"/>
+
+  <br />
+
+  <label for="cnpj">CNPJ: </label>  <br />
+  <input type="text" name="cnpj" [(ngModel)]="fornecedor.CNPJ"/>
+  <div style="width: 24%;" class="true" *ngIf="fornecedor.validar()">&nbsp;CNPJ Válido</div>
+  <div style="width: 24%;" class="false" *ngIf="!fornecedor.validar()">&nbsp;CNPJ Inválido</div>
+  
+  <div>
+    <br />
+    <input type="button" value="Salvar" (click)="salvar()">
+  </div>
+
+</form>
